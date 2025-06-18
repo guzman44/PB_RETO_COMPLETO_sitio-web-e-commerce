@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NovaTienda - Contacto</title>
+  <title>NovaTienda - Lista de Productos</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/estilos-Index.css" />
   <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="assets/css/styles_register.css"/>
 </head>
 <body>
   <header class="border-bottom py-3">
@@ -52,19 +51,41 @@
     </div>
   </header>
 
-  <div class="main-content">
-    <div class="register-container">
-      <h2>Regístrate</h2>
-      <form id="registerForm">
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="text" id="apellido" placeholder="Apellido" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <button id="submitBtn" type="submit" disabled>Regístrate</button>
-      </form>
-      <p class="login-link">¿Ya eres miembro? <a href="index.html">Inicia tu sesión</a></p>
+  <main class="container py-5">
+    <h2 class="text-center mb-5">Nuestros Productos</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="assets/img/camisa-hombre.jpg" class="card-img-top" alt="Camisa hombre" />
+          <div class="card-body">
+            <h5 class="card-title">Camisa Casual Hombre</h5>
+            <p class="card-text">$89.900</p>
+            <a href="productos.html" class="btn btn-dark">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="assets/img/blusa-mujer.jpg" class="card-img-top" alt="Blusa mujer" />
+          <div class="card-body">
+            <h5 class="card-title">Blusa Floral Mujer</h5>
+            <p class="card-text">$74.500</p>
+            <a href="productos.html" class="btn btn-dark">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="assets/img/jeans-unisex.jpg" class="card-img-top" alt="Jeans" />
+          <div class="card-body">
+            <h5 class="card-title">Jeans Unisex</h5>
+            <p class="card-text">$110.000</p>
+            <a href="productos.html" class="btn btn-dark">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </main>
 
   <footer class="bg-white text-center py-5">
     <div class="container">
@@ -109,6 +130,5 @@
   </footer>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/register.js"></script>
 </body>
 </html>
