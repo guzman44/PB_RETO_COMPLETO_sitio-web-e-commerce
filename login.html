@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/styles_register.css">
+  <link rel="stylesheet" href="assets/css/estilos-Index.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="assets/img/logo.jpg" width="150" height="150"></div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#carrito">Carrito</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="register.html" id="registro">Registrarse</a>
+      <a href="login.html">Iniciar sesión</a>
+      <div class="dropdown">
+        <a href="#">☰</a>
+        <div class="dropdown-menu">
+          <a href="index.html">Inicio</a>
+          <a href="#bienvenida">Te damos la bienvenida</a>
+          <a href="#tienda">Tienda</a>
+          <a href="https://instagram.com">Instagram</a>
+          <a href="#promocion">Promoción</a>
+          <a href="acercade.html">Acerca de Nosotros</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <div class="login-container">
+      <h2>Iniciar sesión</h2>
+      <p>¿Es tu primera vez? <a href="register.html">Regístrate</a></p>
+
+      <form id="loginForm">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+
+        <label for="password">Contraseña *</label>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <a href="#" class="forgot">¿Olvidaste la contraseña?</a>
+
+        <button type="submit">Iniciar sesión</button>
+      </form>
+
+      <div class="divider">o conéctate con</div>
+
+      <div class="social-login">
+        <button class="google-btn">G</button>
+        <button class="facebook-btn">f</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white text-center py-5">
+    <div class="container">
+      <h2 class="mb-4 fw-bold">NovaTienda</h2>
+      <p class="mb-4">Moda con estilo para cada ocasión. Encuentra tu look ideal con nosotros.</p>
+
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-3">
+          <h5 class="fw-bold">Contacto</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-map-marker-alt me-2"></i>Bogotá, Colombia</li>
+            <li><i class="fas fa-phone me-2"></i><a href="tel:057-320-202-02-02">057-320-202-02-02</a></li>
+            <li><i class="fas fa-envelope me-2"></i><a href="mailto:info@novatienda.com">info@novatienda.com</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="fw-bold">Productos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Sombreros</a></li>
+            <li><a href="#">Hamacas</a></li>
+            <li><a href="#">Platería</a></li>
+            <li><a href="#">Decoración</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="fw-bold">Navegación</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="compras.html">Compras</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="fw-bold">Síguenos</h5>
+        <a class="text-dark mx-2" href="https://facebook.com/" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+        <a class="text-dark mx-2" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+        <a class="text-dark mx-2" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+        <a class="text-dark mx-2" href="https://pinterest.com/" target="_blank"><i class="fab fa-pinterest fa-lg"></i></a>
+      </div>
+
+      <div class="text-muted small">
+        &copy; 2025 NovaTienda. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
