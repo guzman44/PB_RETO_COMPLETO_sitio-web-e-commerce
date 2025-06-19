@@ -41,9 +41,15 @@
           <span class="input-group-text bg-white border-end-0"><i class="fas fa-search"></i></span>
           <input type="text" class="form-control border-start-0" placeholder="Buscar" />
         </div>
-        <a href="compras.html" class="text-dark fs-4" title="Carrito de Compras">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
+        <a href="compras.html" class="text-dark fs-4 position-relative" title="Carrito de Compras">
+		  <i class="fas fa-shopping-cart"></i>
+		  <span id="contador-carrito-icono" 
+				style="position: absolute; top: -8px; right: -8px; 
+					   background: red; color: white; border-radius: 50%; 
+					   padding: 2px 6px; font-size: 12px; font-weight: bold;">
+			0
+		  </span>
+		</a>
         <a href="login.html" class="text-dark fs-4" title="Usuario">
           <i class="fas fa-user"></i>
         </a>
@@ -128,5 +134,6 @@
   </footer>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/carrito.js"></script>
 </body>
 </html>
