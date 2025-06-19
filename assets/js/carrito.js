@@ -36,13 +36,23 @@ function mostrarCarrito() {
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${producto.nombre}</td>
-      <td>$${producto.precio.toLocaleString()}</td>
-      <td>${item.cantidad}</td>
-      <td>$${subtotal.toLocaleString()}</td>
-      <td><button class="btn btn-sm btn-danger" onclick="eliminarProducto(${item.id})">Eliminar</button></td>
+      <td class="align-middle">
+        <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 80px; height: auto; object-fit: contain; margin-right: 10px;" />
+        ${producto.nombre}
+      </td>
+      <td class="align-middle">$${producto.precio.toLocaleString()}</td>
+      <td class="align-middle">${item.cantidad}</td>
+      <td class="align-middle">$${subtotal.toLocaleString()}</td>
+      <td class="align-middle">
+        <button class="btn btn-sm btn-danger" onclick="eliminarProducto(${item.id})">Eliminar</button>
+      </td>
     `;
     tbody.appendChild(tr);
+	
+	document.getElementById("carrito-total").textContent = total.toLocaleString();
+	const cantidadTotal = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+	document.getElementById("contador-carrito").textContent = cantidadTotal;
+	actualizarContadorIcono();
   });
 
   document.getElementById("carrito-total").textContent = total.toLocaleString();
@@ -53,6 +63,7 @@ function eliminarProducto(id) {
   carrito = carrito.filter((item) => item.id !== id);
   guardarCarrito();
   mostrarCarrito();
+  actualizarContadorIcono();
 }
 
 function guardarCarrito() {
@@ -63,13 +74,22 @@ document.getElementById("vaciar-carrito")?.addEventListener("click", () => {
   carrito = [];
   guardarCarrito();
   mostrarCarrito();
+  actualizarContadorIcono();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   mostrarCarrito();
+  actualizarContadorIcono();
   let visitas = parseInt(sessionStorage.getItem("contadorVisitas") || "0");
   visitas++;
   sessionStorage.setItem("contadorVisitas", visitas);
   const contadorVisitasSpan = document.getElementById("contador-visitas");
   if (contadorVisitasSpan) contadorVisitasSpan.textContent = visitas;
 });
+
+function actualizarContadorIcono() {
+  const contadorIcono = document.getElementById("contador-carrito-icono");
+  if (!contadorIcono) return;
+  const cantidadTotal = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+  contadorIcono.textContent = cantidadTotal;
+}

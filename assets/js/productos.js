@@ -38,11 +38,13 @@ function mostrarProductos() {
       </div>
     `;
     contenedorProductos.appendChild(col);
+	actualizarContadorIcono();
   });
 }
 
+let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
+
 function agregarProducto(id) {
-  let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
   const productoExistente = carrito.find((item) => item.id === id);
   if (productoExistente) {
     productoExistente.cantidad++;
@@ -51,6 +53,14 @@ function agregarProducto(id) {
   }
   sessionStorage.setItem("carrito", JSON.stringify(carrito));
   alert("Producto agregado al carrito");
+  actualizarContadorIcono();
 }
 
 document.addEventListener("DOMContentLoaded", mostrarProductos);
+
+function actualizarContadorIcono() {
+  const contadorIcono = document.getElementById("contador-carrito-icono");
+  if (!contadorIcono) return;
+  const cantidadTotal = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+  contadorIcono.textContent = cantidadTotal;
+}
