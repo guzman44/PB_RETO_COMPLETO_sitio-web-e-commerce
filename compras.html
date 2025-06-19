@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NovaTienda - Contacto</title>
+  <title>NovaTienda - Carrito de Compras</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/estilos-Index.css" />
   <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
@@ -14,7 +14,6 @@
       <div class="d-flex align-items-center mb-2 mb-lg-0">
         <img src="assets/img/logo.jpg" width="120" height="120" alt="NovaTienda Logo" />
       </div>
-
       <nav class="mb-2 mb-lg-0 flex-grow-1 d-none d-md-block">
         <ul class="nav justify-content-center">
           <li class="nav-item"><a href="index.html" class="nav-link px-3 fw-bold">Inicio</a></li>
@@ -23,11 +22,8 @@
           <li class="nav-item"><a href="login.html" class="nav-link px-3 fw-bold">Iniciar sesión</a></li>
         </ul>
       </nav>
-
-      <div class="dropdown mb-2 mb-lg-0" style="padding-right: 10px;">
-        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-          ☰
-        </a>
+      <div class="d-md-none dropdown mb-2 mb-lg-0">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">☰</a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
           <li><a class="dropdown-item" href="index.html">Inicio</a></li>
           <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
@@ -35,67 +31,37 @@
           <li><a class="dropdown-item" href="acercade.html">Acerca de Nosotros</a></li>
         </ul>
       </div>
-
       <div class="d-flex align-items-center gap-3 mb-2 mb-lg-0" style="min-width: 250px;">
         <div class="input-group input-group-sm flex-grow-1">
           <span class="input-group-text bg-white border-end-0"><i class="fas fa-search"></i></span>
           <input type="text" class="form-control border-start-0" placeholder="Buscar" />
         </div>
-        <a href="compras.html" class="text-dark fs-4" title="Carrito de Compras">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-        <a href="login.html" class="text-dark fs-4" title="Usuario">
-          <i class="fas fa-user"></i>
-        </a>
+        <a href="compras.html" class="text-dark fs-4" title="Carrito de Compras"><i class="fas fa-shopping-cart"></i></a>
+        <a href="login.html" class="text-dark fs-4" title="Usuario"><i class="fas fa-user"></i></a>
       </div>
     </div>
   </header>
-  
-  
+
   <main class="container py-5">
-    <div class="row">
-      <div class="col-md-3">
-        <h4>Categorías</h4>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="#">Hombres</a></li>
-          <li class="list-group-item"><a href="#">Mujeres</a></li>
-          <li class="list-group-item"><a href="#">Niños</a></li>
-          <li class="list-group-item"><a href="#">Accesorios</a></li>
-        </ul>
-      </div>
-      <div class="col-md-9">
-        <h2 class="mb-4">Tu Carrito de Compras</h2>
-        <div class="row mb-4">
-          <div class="col-md-4">
-            <img src="assets/img/camisa-hombre.jpg" class="img-fluid rounded" alt="Camisa" />
-          </div>
-          <div class="col-md-8">
-            <h5>Camiseta Casual Hombre</h5>
-            <p>Talla: M | Cantidad: 1</p>
-            <p><strong>$89.900</strong></p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-md-4">
-            <img src="assets/img/blusa-mujer.jpg" class="img-fluid rounded" alt="Blusa" />
-          </div>
-          <div class="col-md-8">
-            <h5>Blusa Floral Mujer</h5>
-            <p>Talla: S | Cantidad: 2</p>
-            <p><strong>$74.500</strong></p>
-          </div>
-        </div>
-        <hr />
-        <h4>Total: <strong>$238.900</strong></h4>
-        <button class="btn btn-danger me-2">Vaciar Carrito</button>
-        <a href="pago.html" class="btn btn-dark">Proceder al Pago</a>
-      </div>
-    </div>
+    <h2 class="mb-4 text-center">Tu Carrito de Compras</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="carrito-items"></tbody>
+    </table>
+    <h4>Total: $<span id="carrito-total">0</span></h4>
+    <button id="vaciar-carrito" class="btn btn-danger">Vaciar Carrito</button>
+    <p class="mt-4">Productos en carrito: <span id="contador-carrito">0</span></p>
+    <p>Visitas a esta página: <span id="contador-visitas">0</span></p>
   </main>
-  
-  
-  
-  
+
   <footer class="bg-white text-center py-5">
     <div class="container">
       <h2 class="mb-4 fw-bold">NovaTienda</h2>
@@ -138,6 +104,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>  
+  <script src="assets/js/carrito.js"></script>
 </body>
 </html>
